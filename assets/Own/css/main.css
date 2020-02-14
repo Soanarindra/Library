@@ -1,0 +1,11 @@
+@font-face
+{
+	font-family: "Script MT Bold";
+	src: url('../Font/SCRIPT_MT_BOLD.TTF');
+}
+body
+{
+	/*background-color: #DDD;*/
+	background-color: rgb(219,219,219);
+	overflow-x: hidden;
+}

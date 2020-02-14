@@ -1,0 +1,93 @@
+@-ms-viewport
+{
+	min-width: 640px;
+	max-width: 800px;
+	width: device-100px;
+}
+
+.zonetext textarea
+{
+	width: 600px;
+	height: 150px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.ajj
+{
+	margin-top: 50px;
+	margin-left: 270px;
+}
+
+#ajouter
+{
+	margin-top: 10px;
+	margin-left: 280px;
+	width: 200px;
+}
+
+#formulaire
+{
+	width: 800px;
+	height: 500px;
+}
+
+#uploadfile
+{
+	margin-top: 20px;
+	margin-left: 10px;
+	width: 600px;
+}
+
+#categorielivre
+{
+	width: 600px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+#titredulivre
+{
+	margin-top: 20px;
+}
+
+#cat20
+{
+	margin-left: 10px;
+}
+
+#modifier
+{
+	width: 140px;
+	margin-left: 290px;
+
+}
+
+#supprimer
+{
+	margin-left: 250px;
+}
+
+#retour
+{
+	margin-left: 10px;
+	width: 80px;
+	color: rgb(255,255,255);
+	background-color: rgb(39,39,39);
+}
+
+/* ========================= */
+
+.signInForm .input
+{
+	display: none;
+}
+.signInForm .error
+{
+	color: red;
+	display: block;
+}
+#favoris a
+{
+	color: black;
+}

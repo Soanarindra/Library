@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+<?php
+	session_start();
+	include '../include/connect.php';
+	include '../include/function.php';
+	$action="";
+	$thereIsAction=false;
+	if(isset($_GET['action']))
+	{
+		$action=$_GET['action'];
+		$thereIsAction=true;
+	}
+	elseif(isset($_POST['action']))
+	{
+		$action=$_POST['action'];
+		$thereIsAction=true;
+	}
+	if(!$thereIsAction)
+	{
+		header('Location:../index.php');
+	}
+
+	if($action=='logIn')
+	{
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$user=logIn($email,$password);
+	}
+	if($action=='logOut')
+	{
+		unset($_SESSION['actifUser']);
+		// $url=$_SERVER['HTTP_REFERER'];
+		// header("Location:".$url."?logInFailed");
+		header('Location:../index.php');
+	}
+	if($action=='signIn')
+	{
+		$user['prenom']=$_POST['prenom'];
+		$user['nom']=$_POST['nom'];
+		$user['email']=$_POST['email'];
+		$user['password']=$_POST['password'];
+		$user['passwordConfirm']=$_POST['passwordConfirm'];
+		signIn($user);
+	}
+	if($action=='search')
+	{
+		$_SESSION['searchResult']=searchBook($_POST['keyWord']);
+		header('Location:../index.php?search');
+	}
+	if($action=='favoris')
+	{
+		switchThis($_GET['bookId'],$_GET['userId']);
+	}
+	if($action=='detailsControl')
+	{
+		$control=$_POST['control'];
+		$BookId=$_POST['BookId'];
+		$bookChanged['BookId']=$BookId;
+		$bookChanged['BookTitle']=$_POST['BookTitle'];
+		$bookChanged['Autor']=$_POST['Autor'];
+		$bookChanged['Categorie']=$_POST['Categorie'];
+		$bookChanged['Resume']=$_POST['Resume'];
+		if($control=='edit')
+		{
+			edit($bookChanged);
+		}
+		if($control=='delete')
+		{
+			delete($BookId);  
+		}
+	}
+	if($action=='ajout')
+	{
+		$book['BookTitle']=$_POST['BookTitle'];
+		$book['Autor']=$_POST['Autor'];
+		$book['Categorie']=$_POST['Categorie'];
+		$book['Resume']=$_POST['Resume'];
+		$book['file']=$_FILES['book'];
+		add($book);
+	}
+?>

@@ -1,0 +1,34 @@
+.bookList
+{
+	padding-top: 10px;
+	margin: 60px auto 200px;
+}
+.bookList table
+{
+	background-color: #AAA;
+}
+.bookList table td,th
+{
+	padding: 25px 10px;
+	text-align: center;
+}
+.bookList table thead
+{
+	background-color: #343A40;
+	background-color: #777;
+	/*color: white;*/
+}
+.bookList table tbody tr:hover
+{
+	background-color: #999;
+}
+.bookList a
+{
+	color: black;
+	text-decoration: none;
+}
+.bookList a:hover
+{
+	color: black;
+	text-decoration: none;
+}
